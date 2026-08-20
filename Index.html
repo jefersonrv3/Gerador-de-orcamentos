@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html:5>
 <html lang="pt-BR">
 
 <head>
@@ -9,26 +9,22 @@
   <script src="script.js" defer> </script>
   <background>
     <img class="background-desktop" src="./assets/background-desktop.png">
-
+    <img class="background-mobile" src="./assets/background-mobile.jpg">
   </background>
 </head>
 
 <body>
   <div class="wrap">
-
     <header class="app-header">
       <div class="logo-JJ-autocenter">
         <img src="./assets/Logo.png">
       </div>
       <div>
         <h1><span class="dot"></span> Gerador de Orçamentos</h1>
-        <div class="sub">Preencha os dados e gere o orçamento em PDF para o cliente</div>
+        <div class="sub">Preencha os dados e gere o orçamento em PDF para o cliente, clique em imprimir para PDF na
+          opção "impressora"</div>
       </div>
-
     </header>
-
-    <!-- DADOS FIXOS DA OFICINA -->
-
 
     <!-- DADOS DO CLIENTE / VEÍCULO -->
     <div class="card">
@@ -37,17 +33,18 @@
         <div class="field"><label>Nome do cliente</label><input type="text" id="clientName" placeholder="Nome completo">
         </div>
         <div class="field"><label>Telefone do cliente</label><input type="tel" id="clientPhone"
-            placeholder="(11) 99999-0000"></div>
+            placeholder="(11) 99999-0000">
+        </div>
       </div>
       <div class="grid cols-3" style="margin-top:12px;">
         <div class="field"><label>Data</label><input type="date" id="budgetDate"></div>
         <div class="field"><label>Placa</label><input type="text" id="carPlate" placeholder="ABC-1D23"
             style="text-transform:uppercase;"></div>
-        <div class="field"><label>Modelo do carro</label><input type="text" id="carModel"
+        <div class="field"><label>Modelo do Veículo</label><input type="text" id="carModel"
             placeholder="Ex: Fiat Uno 2015"></div>
       </div>
       <div class="field" style="margin-top:12px;">
-        <label>Defeito / motivo da chegada à oficina</label>
+        <label>Defeito relatado / motivo da entrada na oficina</label>
         <textarea id="carIssue" placeholder="Descreva o problema relatado ou identificado"></textarea>
       </div>
     </div>
@@ -94,10 +91,9 @@
     <div class="generate-bar">
       <button class="generate-btn" id="generateBtn">🖨 GERAR PDF</button>
     </div>
-
   </div>
 
-  <!-- PRINT-ONLY AREA -->
+  <!-- PRINT-TO_PDF AREA -->
   <div id="print-area"></div>
 
   <datalist id="unidades">
@@ -110,7 +106,6 @@
     <option value="Litro"></option>
     <option value="Metro"></option>
   </datalist>
-
 
 </body>
 
