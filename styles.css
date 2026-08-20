@@ -22,14 +22,18 @@ body {
     color: #e9e6df;
     min-height: 100vh;
     padding: 0;
-
+    background-image: url('./assets/background-desktop.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .background-desktop {
-    z-index: -1;
     position: fixed;
     width: 100vw;
     height: 100vh;
+    z-index: -1;
 }
 
 .background-mobile {
@@ -48,18 +52,19 @@ body {
 
 .wrap {
     max-width: 880px;
-    margin: 0 auto;
+    margin: 2vh auto;
     border: none;
     border-radius: 65px;
     padding: 10px;
     background-color: rgba(155, 155, 155, 0.44);
     box-shadow: 6px 8px 8px 6px #1b1b1b56;
+    align-items: center;
 }
 
 header.app-header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     gap: 16px;
     margin-bottom: 20px;
     flex-wrap: wrap;
@@ -144,6 +149,9 @@ header.app-header .sub {
 }
 
 @media (max-width:842px) {
+    body {
+        background-image: url('./assets/background-mobile.jpg');
+    }
 
     .grid.cols-2,
     .grid.cols-3 {
@@ -354,20 +362,15 @@ textarea {
 }
 
 @media print {
-    body * {
-        visibility: hidden;
-    }
 
-    #print-area,
-    #print-area * {
-        visibility: visible;
+    .wrap,
+    datalist {
+        display: none !important;
     }
 
     #print-area {
         display: block !important;
-        position: absolute;
-        top: 0;
-        left: 0;
+        position: static;
         width: 100%;
         background: #fff;
         color: #111;
@@ -377,37 +380,16 @@ textarea {
     body {
         background: #fff;
         padding: 0;
+        min-height: 0;
     }
 }
+
 
 .doc {
     font-family: "Segoe UI", Arial, sans-serif;
     color: #1a1a1a;
     padding: 30px 36px;
 }
-
-/*/
-.doc-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    border-bottom: 3px solid #23282d;
-    padding-bottom: 14px;
-    margin-bottom: 18px;
-}
-
-.doc-header .brand {
-    display: flex;
-    gap: 14px;
-    align-items: center;
-}
-
-.doc-header img.logo {
-    width: 64px;
-    height: 64px;
-    object-fit: contain;
-}
-*/
 
 .doc-header {
     display: flex;
