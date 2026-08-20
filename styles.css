@@ -71,6 +71,7 @@ header.app-header {
 }
 
 .sub {
+    color: #111;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -126,7 +127,7 @@ header.app-header .sub {
     content: "";
     width: 3px;
     height: 14px;
-    background: var(--amber);
+    background: #E70E0D;
     display: inline-block;
     border-radius: 2px;
 }
@@ -230,6 +231,7 @@ textarea {
     cursor: pointer;
     font-size: 1rem;
     line-height: 1;
+
 }
 
 .remove-btn:hover {
@@ -238,8 +240,6 @@ textarea {
 }
 
 .add-btn {
-    background: var(--amber);
-    color: #241a05;
     border: none;
     font-weight: 600;
     padding: 10px 16px;
@@ -249,10 +249,38 @@ textarea {
     display: inline-flex;
     align-items: center;
     gap: 6px;
+    color: #030101;
+    cursor: pointer;
+    background: linear-gradient(90deg, #5a5959, #ffff);
+    background-size: 100% 100%;
+    background-position: right;
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+
+    transition: background-position 02.6s ease, transform 2.6s ease;
 }
 
 .add-btn:hover {
-    background: var(--amber-dark);
+    background: linear-gradient (60deg, #aaa9a9, #ec2b2b, );
+}
+
+.add-btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 6px;
+    background: linear-gradient(90deg, #767574, #E70E0D);
+    opacity: 0;
+    transition: opacity 2.6s ease;
+    z-index: -1;
+}
+
+.add-btn:hover::before {
+    opacity: 1;
+}
+
+.add-btn:hover {
+    transform: scale(1.1);
+    border-radius: 6px;
 }
 
 .empty-hint {
@@ -290,7 +318,7 @@ textarea {
 .totals-box tr.grand td {
     border-top: 1px solid var(--amber);
     font-weight: 700;
-    color: var(--amber);
+    color: #E70E0D;
     font-size: 1.05rem;
     padding-top: 8px;
 }
@@ -303,7 +331,6 @@ textarea {
 }
 
 .generate-btn {
-    background: var(--amber);
     color: #241a05;
     font-weight: 700;
     letter-spacing: .5px;
@@ -311,12 +338,40 @@ textarea {
     padding: 14px 34px;
     border-radius: 8px;
     font-size: 1rem;
-    cursor: pointer;
+
     box-shadow: 0 6px 18px rgba(0, 0, 0, .35);
+    border: none;
+    color: #030101;
+    cursor: pointer;
+    background: linear-gradient(90deg, #5a5959, #ffff);
+    background-size: 100% 100%;
+    background-position: right;
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+    transition: background-position 02.6s ease, transform 2.6s ease;
 }
 
 .generate-btn:hover {
-    background: var(--amber-dark);
+    background: linear-gradient (60deg, #aaa9a9, #ec2b2b, );
+}
+
+.generate-btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 6px;
+    background: linear-gradient(90deg, #767574, #E70E0D);
+    opacity: 0;
+    transition: opacity 2.6s ease;
+    z-index: -1;
+}
+
+.generate-btn:hover::before {
+    opacity: 1;
+}
+
+.generate-btn:hover {
+    transform: scale(1.1);
+    border-radius: 6px;
 }
 
 .settings-panel {
