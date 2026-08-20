@@ -131,7 +131,8 @@ document.getElementById('generateBtn').addEventListener('click', () => {
       <div class="doc-header">
         <div class="brand">
           ${logoSrc ? `<img class="logo" src="${logoSrc}">` : ''}
-          <div>
+          
+          <div>   
             <div class="brand-name"></div>
           </div>
         </div>
