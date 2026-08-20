@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orçamentos — Oficina</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="script.js" defer> </script>
+  <background>
+    <img class="background-desktop" src="./assets/background-desktop.png">
+
+  </background>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <header class="app-header">
+      <div class="logo-JJ-autocenter">
+        <img src="./assets/Logo.png">
+      </div>
+      <div>
+        <h1><span class="dot"></span> Gerador de Orçamentos</h1>
+        <div class="sub">Preencha os dados e gere o orçamento em PDF para o cliente</div>
+      </div>
+
+    </header>
+
+    <!-- DADOS FIXOS DA OFICINA -->
+
+
+    <!-- DADOS DO CLIENTE / VEÍCULO -->
+    <div class="card">
+      <h2>Cliente e veículo</h2>
+      <div class="grid cols-2">
+        <div class="field"><label>Nome do cliente</label><input type="text" id="clientName" placeholder="Nome completo">
+        </div>
+        <div class="field"><label>Telefone do cliente</label><input type="tel" id="clientPhone"
+            placeholder="(11) 99999-0000"></div>
+      </div>
+      <div class="grid cols-3" style="margin-top:12px;">
+        <div class="field"><label>Data</label><input type="date" id="budgetDate"></div>
+        <div class="field"><label>Placa</label><input type="text" id="carPlate" placeholder="ABC-1D23"
+            style="text-transform:uppercase;"></div>
+        <div class="field"><label>Modelo do carro</label><input type="text" id="carModel"
+            placeholder="Ex: Fiat Uno 2015"></div>
+      </div>
+      <div class="field" style="margin-top:12px;">
+        <label>Defeito / motivo da chegada à oficina</label>
+        <textarea id="carIssue" placeholder="Descreva o problema relatado ou identificado"></textarea>
+      </div>
+    </div>
+
+    <!-- PEÇAS -->
+    <div class="card">
+      <h2>Peças</h2>
+      <div id="partsList">
+        <p class="empty-hint" id="partsEmpty">Nenhuma peça adicionada ainda.</p>
+      </div>
+      <button class="add-btn" id="addPartBtn">+ Adicionar nova peça</button>
+    </div>
+
+    <!-- SERVIÇOS -->
+    <div class="card">
+      <h2>Serviços técnicos</h2>
+      <div id="servicesList">
+        <p class="empty-hint" id="servicesEmpty">Nenhum serviço adicionado ainda.</p>
+      </div>
+      <button class="add-btn" id="addServiceBtn">+ Adicionar serviço técnico</button>
+    </div>
+
+    <!-- TOTAIS -->
+    <div class="card">
+      <h2>Resumo</h2>
+      <div class="totals-box">
+        <table>
+          <tr>
+            <td class="label">Total em peças</td>
+            <td class="val" id="totalParts">R$ 0,00</td>
+          </tr>
+          <tr>
+            <td class="label">Total em serviços</td>
+            <td class="val" id="totalServices">R$ 0,00</td>
+          </tr>
+          <tr class="grand">
+            <td class="label">TOTAL GERAL</td>
+            <td class="val" id="totalGrand">R$ 0,00</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="generate-bar">
+      <button class="generate-btn" id="generateBtn">🖨 GERAR PDF</button>
+    </div>
+
+  </div>
+
+  <!-- PRINT-ONLY AREA -->
+  <div id="print-area"></div>
+
+  <datalist id="unidades">
+    <option value="Unidade"></option>
+    <option value="Par"></option>
+    <option value="Jogo"></option>
+    <option value="Kit"></option>
+    <option value="Conjunto"></option>
+    <option value="Caixa"></option>
+    <option value="Litro"></option>
+    <option value="Metro"></option>
+  </datalist>
+
+
+</body>
+
+</html>

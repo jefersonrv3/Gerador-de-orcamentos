@@ -1,0 +1,597 @@
+:root {
+    --graphite: #23282d;
+    --steel: #3d454d;
+    --steel-light: #56616b;
+    --amber: #e8962c;
+    --amber-dark: #c47d1f;
+    --paper: #f7f5f0;
+    --line: #d8d3c8;
+    --danger: #b3432b;
+    --ok: #4a7a4a;
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    color: #e9e6df;
+    min-height: 100vh;
+    padding: 0;
+    z-index: -1;
+}
+
+.background-desktop {
+    z-index: -1;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+}
+
+.logo-JJ-autocenter {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 20px;
+    border-radius: 20px;
+    border: #FFFF, 20px;
+}
+
+.wrap {
+    max-width: 880px;
+    margin: 0 auto;
+    border: none;
+    border-radius: 65px;
+    padding: 10px;
+    background-color: rgba(155, 155, 155, 0.44);
+    box-shadow: 6px 8px 8px 6px #1b1b1b56;
+}
+
+header.app-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.sub {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-weight: 500;
+    font-size: 25px;
+}
+*/
+header.app-header h1 {
+    font-size: 1.5rem;
+    margin: 0;
+    letter-spacing: .5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+header.app-header h1 .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+    background: var(--amber);
+    display: inline-block;
+    transform: rotate(45deg);
+}
+
+header.app-header .sub {
+    color: #a9a49a;
+    font-size: .85rem;
+    margin-top: 2px;
+}
+
+.card {
+    background: var(--steel);
+    border-radius: 10px;
+    padding: 20px 22px;
+    margin-bottom: 18px;
+    border: 1px solid #4a545d;
+}
+
+.card h2 {
+    margin: 0 0 14px;
+    font-size: .78rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #c9c3b6;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.card h2::before {
+    content: "";
+    width: 3px;
+    height: 14px;
+    background: var(--amber);
+    display: inline-block;
+    border-radius: 2px;
+}
+
+.grid {
+    display: grid;
+    gap: 12px;
+}
+
+.grid.cols-2 {
+    grid-template-columns: 1fr 1fr;
+}
+
+.grid.cols-3 {
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.grid.cols-4 {
+    grid-template-columns: 2fr 1fr 1fr 1fr auto;
+}
+
+@media (max-width:842px) {
+
+    .grid.cols-2,
+    .grid.cols-3 {
+        grid-template-columns: 1fr;
+    }
+
+    .grid.cols-4 {
+        grid-template-columns: 1fr;
+    }
+
+    .logo-JJ-autocenter {
+        width: 90vw;
+        max-width: auto;
+    }
+}
+
+label {
+    display: block;
+    font-size: .72rem;
+    color: #bdb7a9;
+    margin-bottom: 4px;
+    letter-spacing: .3px;
+}
+
+input[type=text],
+input[type=tel],
+input[type=date],
+input[type=number],
+input[type=file],
+textarea {
+    width: 100%;
+    padding: 9px 10px;
+    border-radius: 6px;
+    border: 1px solid #5a646d;
+    background: #2c333a;
+    color: #f2efe9;
+    font-size: .92rem;
+}
+
+input:focus,
+textarea:focus {
+    outline: 2px solid var(--amber);
+    outline-offset: 1px;
+    border-color: var(--amber);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 60px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+}
+
+.row-item {
+    background: #333b42;
+    border: 1px solid #4a545d;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 10px;
+}
+
+.row-item .grid.cols-4 {
+    align-items: end;
+}
+
+.remove-btn {
+    background: transparent;
+    border: 1px solid var(--danger);
+    color: #e6a290;
+    width: 36px;
+    height: 36px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    line-height: 1;
+}
+
+.remove-btn:hover {
+    background: var(--danger);
+    color: #fff;
+}
+
+.add-btn {
+    background: var(--amber);
+    color: #241a05;
+    border: none;
+    font-weight: 600;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: .85rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.add-btn:hover {
+    background: var(--amber-dark);
+}
+
+.empty-hint {
+    color: #9a948a;
+    font-size: .85rem;
+    font-style: italic;
+}
+
+.totals-box {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 6px;
+}
+
+.totals-box table {
+    border-collapse: collapse;
+    font-size: .9rem;
+}
+
+.totals-box td {
+    padding: 4px 10px;
+}
+
+.totals-box td.label {
+    color: #c9c3b6;
+    text-align: right;
+}
+
+.totals-box td.val {
+    font-family: "Consolas", monospace;
+    text-align: right;
+    min-width: 110px;
+}
+
+.totals-box tr.grand td {
+    border-top: 1px solid var(--amber);
+    font-weight: 700;
+    color: var(--amber);
+    font-size: 1.05rem;
+    padding-top: 8px;
+}
+
+.generate-bar {
+    position: sticky;
+    bottom: 14px;
+    margin-top: 24px;
+    text-align: center;
+}
+
+.generate-btn {
+    background: var(--amber);
+    color: #241a05;
+    font-weight: 700;
+    letter-spacing: .5px;
+    border: none;
+    padding: 14px 34px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .35);
+}
+
+.generate-btn:hover {
+    background: var(--amber-dark);
+}
+
+.settings-panel {
+    display: none;
+}
+
+.settings-panel.open {
+    display: block;
+}
+
+.logo-preview {
+    width: 90px;
+    height: 90px;
+    border-radius: 8px;
+    border: 1px dashed var(--steel-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #2c333a;
+    font-size: .65rem;
+    color: #9a948a;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.logo-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.save-note {
+    font-size: .75rem;
+    color: #8fae7a;
+    margin-top: 6px;
+    min-height: 1em;
+}
+
+/* ---------- PRINT AREA (hidden on screen) ---------- */
+#print-area {
+    display: none;
+}
+
+@media print {
+    body * {
+        visibility: hidden;
+    }
+
+    #print-area,
+    #print-area * {
+        visibility: visible;
+    }
+
+    #print-area {
+        display: block !important;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        color: #111;
+        padding: 0;
+    }
+
+    body {
+        background: #fff;
+        padding: 0;
+    }
+}
+
+.doc {
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #1a1a1a;
+    padding: 30px 36px;
+}
+
+/*/
+.doc-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 3px solid #23282d;
+    padding-bottom: 14px;
+    margin-bottom: 18px;
+}
+
+.doc-header .brand {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+}
+
+.doc-header img.logo {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+}
+*/
+
+.doc-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-bottom: 3px solid #23282d;
+    padding-bottom: 14px;
+    margin-bottom: 18px;
+}
+
+.doc-header .brand {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.doc-header img.logo {
+    width: 80%;
+    max-width: 90vw;
+    height: auto;
+    object-fit: contain;
+    margin: 0 auto;
+}
+
+.doc-header .doc-title {
+    margin-top: 10px;
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+}
+
+.doc-header .brand-name {
+    font-size: 1.3rem;
+    font-weight: 700;
+
+}
+
+.doc-header .brand-meta {
+    font-size: .78rem;
+    color: #444;
+    line-height: 1.5;
+    margin-top: 2px;
+}
+
+.doc-header .doc-title {
+    text-align: right;
+}
+
+.doc-header .doc-title .tag {
+    font-size: 1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #888;
+    display: inline-block;
+}
+
+.doc-header .doc-title .num {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-top: 2px;
+}
+
+.doc-header .doc-title .date {
+    font-size: 1rem;
+    color: #444;
+    margin-top: 2px;
+}
+
+.info-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 18px;
+}
+
+.info-box {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 10px 12px;
+}
+
+.info-box h3 {
+    margin: 0 0 6px;
+    font-size: .68rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #888;
+}
+
+.info-box p {
+    margin: 2px 0;
+    font-size: .86rem;
+}
+
+.info-box p b {
+    display: inline-block;
+    min-width: 80px;
+    color: #555;
+    font-weight: 600;
+}
+
+.doc-section-title {
+    font-size: .72rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #fff;
+    background: #23282d;
+    padding: 6px 10px;
+    border-radius: 4px 4px 0 0;
+    margin-top: 14px;
+}
+
+table.doc-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 4px;
+}
+
+table.doc-table th {
+    text-align: left;
+    font-size: .7rem;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    color: #666;
+    border-bottom: 2px solid #23282d;
+    padding: 6px 8px;
+}
+
+table.doc-table td {
+    padding: 7px 8px;
+    font-size: .85rem;
+    border-bottom: 1px solid #e5e2da;
+}
+
+table.doc-table td.num,
+table.doc-table th.num {
+    text-align: right;
+    font-family: "Consolas", monospace;
+}
+
+table.doc-table tr:last-child td {
+    border-bottom: 1px solid #23282d;
+}
+
+.doc-totals {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 16px;
+}
+
+.doc-totals table td {
+    padding: 4px 12px;
+    font-size: .9rem;
+}
+
+.doc-totals table td.label {
+    text-align: right;
+    color: #555;
+}
+
+.doc-totals table td.val {
+    text-align: right;
+    font-family: "Consolas", monospace;
+    min-width: 100px;
+}
+
+.doc-totals table tr.grand td {
+    border-top: 2px solid #23282d;
+    font-weight: 700;
+    font-size: 1.05rem;
+    padding-top: 8px;
+}
+
+.doc-footer {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    font-size: .78rem;
+    color: #666;
+}
+
+.sign-line {
+    margin-top: 40px;
+    border-top: 1px solid #999;
+    padding-top: 4px;
+    width: 220px;
+    text-align: center;
+}
